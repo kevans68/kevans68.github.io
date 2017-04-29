@@ -10,13 +10,22 @@ MOVIE_TEMPLATE = """
 <div class="w3-third w3-container w3-margin-bottom">
   <div class="w3-container w3-white">
     <h4><b>{}</b></h4>
-    <video width="320" height="240" controls style="width:100%" >
-      <source src="Movies/{}"/>
-    </video>
+    <iframe width="560" height="315" style="width:100%" src="https://www.youtube.com/embed/n1C0a2BdUdA" frameborder="0" allowfullscreen></iframe>
     <p>This is a blah blah blah with two galaxies smashing into each other</p>
   </div>
 </div>
 """
+#MOVIE_TEMPLATE = """
+#<div class="w3-third w3-container w3-margin-bottom">
+#  <div class="w3-container w3-white">
+#    <h4><b>{}</b></h4>
+#    <video width="320" height="240" controls style="width:100%" >
+#      <source src="Movies/{}"/>
+#    </video>
+#    <p>This is a blah blah blah with two galaxies smashing into each other</p>
+#  </div>
+#</div>
+#"""
 
 #import pdb; pdb.set_trace()
 
@@ -29,7 +38,7 @@ for idx, movie in enumerate(movies):
   if (idx % 3) == 0:
     print(ROW_START)
 
-  print(MOVIE_TEMPLATE.format(basename(movie), movie))
+  print(MOVIE_TEMPLATE.format(basename(movie)))
 
   if ((idx + 1) % 3 ) == 0:
     print(ROW_END)
